@@ -107,6 +107,7 @@ The first 4 bytes `ee ee ee ee` determine the number of notes with playing infor
 * `a` = Track
 * `b` = Tone (within the track)
 * `c` = Key (ranges from 0-6, presumably from left to right)
+
 Thus, in total, the playing information section should take up 6 times `e` number of bytes. As an example, `teaser.vos` has `e=0xF0A`, which means the following `6 * 0xF0A = 0x5A3C` bytes will consist of the playing information.
 
 # MIDI information
