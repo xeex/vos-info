@@ -56,11 +56,13 @@ The next four bytes are ignored.
 
 The next four represent the "speed", or "노트속도" in VOS Creator. `00 aa 00 00`, where `aa` + 노트속도 value = 11. (or 0x0B)
 
+The next byte is ignored.
+
 The next four bytes represent total "MTIME" in little endian. `00 B4 4D 00` = `0x4db4` = 19892.
 
 The next four represent total "RTIME" in little endian. `00 16 23 00` = `0x2316` = 8982 milliseconds.
 
-The next 1024 bytes (0x400 in hexadecimal) compose the "Effect part" of the VOS file. Again, no clue what it's for (yet), but skipping 1024 bytes after time should take you to a byte sequence that resembles `aa aa aa aa 01 00 00 00`, which takes us to note data. (Upon testing, might actually be 1025 bytes)
+The next 1024 bytes (0x400 in hexadecimal) compose the "Effect part" of the VOS file. Again, no clue what it's for (yet), but skipping 1024 bytes after time should take you to a byte sequence that resembles `aa aa aa aa 01 00 00 00`, which takes us to note data.
 
 # Channel Information
 The `aa aa aa aa` is the number of instruments used in the MIDI file. Following this pattern, each instrument will be expressed in the following way:
