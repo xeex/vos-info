@@ -114,4 +114,4 @@ Thus, in total, the playing information section should take up 6 times `e` numbe
 After the playing information segment, the byte sequence `00 00 00 00 00 00 00 00 0C 00 00 00 56 4F 53 43 54 45 4D 50 2E 6D 69 64 ff ff ff ff` can be observed. `f` represents the length of the MIDI information (but in a different sense, it represents the number of bytes left until EOF) and this sequence is followed by a partially completed MIDI file. The MIDI file generated from this section will contain all of the correct metadata and system events (MIDI title, number of tracks, instrument for each track, etc.), but **it will not have any actual musical data.** That is where the note data and playing information above come from, but at the moment, they require more research.
 
 ---
-[1] This *should* spell 흡혈귀 in Korean, but I cannot find what encoding these are in.
+[1] This *should* spell 흡혈귀 in Korean, but I cannot find what encoding these are in. - Both EUC-KR or Windows 949 (newer) encoding handle this
